@@ -1,6 +1,23 @@
 <h2>Daniel's List</h2>
 <ul>
-    <li *ngFor="let persona of componentes">
-        {{persona.name}} - Typo: {{persona.type}}
+    <li *ngFor="let component of componentes">
+        {{component.name}} - Typo: {{component.type}}
     </li>
 </ul>
+
+<h3>Add Persona</h3>
+    <input #componenteName placeholder="Name">
+    <input #componenteType placeholder="type">
+
+    <button (click) ="addComponent({name: componenteName.value, type:componenteType.value})">Add component</button>
+
+
+<h3>Add Persona Selection</h3>
+    <input #componenteName1 placeholder="Name">
+    <select #componenteType1>  
+        <option *ngFor="let type of tiposComponente" 
+        [value] ="type"> {{type}} </option>
+
+    </select>
+
+    <button (click) ="addComponent({name: componenteName1.value, type:componenteType1.value})">Add component</button>

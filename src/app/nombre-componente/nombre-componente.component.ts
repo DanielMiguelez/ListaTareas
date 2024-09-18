@@ -10,8 +10,18 @@ import { Component } from '@angular/core';
 })
 export class NombreComponenteComponent {
   componentes = [
-    {name : 'Daniel', type:'HUman'},
-    {name : 'Fedex', type:'Dog'},
-    {name : 'Markus', type:'Bird'}
+    {name : 'Daniel', type:'Humano'},
+    {name : 'Fedex', type:'Perro'},
+    {name : 'Markus', type:'Ave'}
   ]
+
+  tiposComponente: string[] = ['Humano', 'Perro', 'Ave'];
+
+
+
+  addComponent(componente :{name:string, type:string})
+  {
+    this.componentes.push(componente);
+  }
+  
 }
