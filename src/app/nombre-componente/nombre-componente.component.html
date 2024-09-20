@@ -1,23 +1,36 @@
 <h2>Daniel's List</h2>
-<ul>
-    <li *ngFor="let component of componentes">
-        {{component.name}} - Typo: {{component.type}}
-    </li>
-</ul>
-
-<h3>Add Persona</h3>
-    <input #componenteName placeholder="Name">
-    <input #componenteType placeholder="type">
-
-    <button (click) ="addComponent({name: componenteName.value, type:componenteType.value})">Add component</button>
 
 
-<h3>Add Persona Selection</h3>
-    <input #componenteName1 placeholder="Name">
-    <select #componenteType1>  
-        <option *ngFor="let type of tiposComponente" 
-        [value] ="type"> {{type}} </option>
+<div class="lista">
+    <p *ngIf="componentes.length === 0"> No hay Digimons</p>
+        <ul>
+            <li *ngFor="let component of componentes,
+                let i = index">
+                {{component.name}} - Typo: {{component.type}}
+                <button (click) ="deleteComponent(i)">Delete component</button>
+            </li>
+        </ul>
+</div>
 
-    </select>
+<div class="addPersona">
+    <h3>Add Persona</h3>
+        <input #componenteName placeholder="Name">
+        <input #componenteType placeholder="type">
 
-    <button (click) ="addComponent({name: componenteName1.value, type:componenteType1.value})">Add component</button>
+        <button (click) ="addComponent(componenteName.value, componenteType.value)">Add component</button>
+</div>
+
+
+<div class="selectPersona">
+    <h3 >Add Persona Selection</h3>
+        <input #componenteName1 placeholder="Name">
+        <select #componenteType1>  
+            <option *ngFor="let type of tiposComponente" 
+            [value] ="type"> {{type}} </option>
+
+        </select>
+
+        <button (click) ="addComponent(componenteName1.value, componenteType1.value)">Add component</button>
+</div>
+
+<footer> Designed BY Daniel Miguélez</footer>

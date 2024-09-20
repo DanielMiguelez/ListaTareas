@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DaniServiceService } from '../dani-service.service';
 
 @Component({
   selector: 'app-nombre-componente',
@@ -8,20 +9,27 @@ import { Component } from '@angular/core';
   templateUrl: './nombre-componente.component.html',
   styleUrl: './nombre-componente.component.css'
 })
-export class NombreComponenteComponent {
-  componentes = [
-    {name : 'Daniel', type:'Humano'},
-    {name : 'Fedex', type:'Perro'},
-    {name : 'Markus', type:'Ave'}
-  ]
+
+export class NombreComponenteComponent implements OnInit{
 
   tiposComponente: string[] = ['Humano', 'Perro', 'Ave'];
 
+  componentes: {name:string, type:string} []= [];
 
+  constructor (private DaniServiceService : DaniServiceService){
 
-  addComponent(componente :{name:string, type:string})
-  {
-    this.componentes.push(componente);
+  }
+
+  ngOnInit(): void {
+    this.componentes = this.DaniServiceService.getComponentes();
+  }
+
+  addComponent(name:string, type:string){
+    this.DaniServiceService.addComponent({name, type});
+  }
+
+  deleteComponent(index:number){
+    this.DaniServiceService.deleteComponent(index);
   }
   
 }

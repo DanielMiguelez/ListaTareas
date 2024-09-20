@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    background-color: rgb(187, 169, 169);
+}
+
+.lista{
+    background-color: rgb(155, 85, 15);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.addPersona{
+    background-color: rgb(155, 85, 15);
+    padding: 20px;
+    text-align: center;;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.selectPersona{
+    background-color: rgb(155, 85, 15);
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+li{
+    background-color: yellow;
+    margin: 20px;
+    list-style:none;
+    padding: 10px;
+}
+
+h2{
+    text-align: center;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+button{
+
+    margin: 10px;
+}
+button:hover{
+    background-color: blue;
+}
+
+footer{
+    background-color: rgb(255, 217, 0);
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+}
