@@ -24,9 +24,7 @@ export class NombreComponenteComponent implements OnInit{
     this.componentes = this.DaniServiceService.getComponentes();
   }
 
-  addComponent(name:string, type:string){
-    this.DaniServiceService.addComponent({name, type});
-  }
+  
 
   deleteComponent(index:number){
     this.DaniServiceService.deleteComponent(index);

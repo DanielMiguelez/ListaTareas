@@ -1,0 +1,21 @@
+<div class="addPersona">
+    <h3>Add Persona</h3>
+            <input #componenteName placeholder="Name">
+            <input #componenteType placeholder="type">
+
+    <button (click) ="addComponent(componenteName.value, componenteType.value)">Add component</button>
+</div>
+
+<div class="selectPersona">
+    
+    <h3 >Add Persona Selection</h3>
+            <input #componenteName1 placeholder="Name">
+            <select #componenteType1>  
+                <option *ngFor="let type of tiposComponente" 
+                [value] ="type"> {{type}} </option>
+            </select>
+
+            <button (click) ="addComponent(componenteName1.value, componenteType1.value)">Add component</button>
+</div>     
+
+     
